@@ -191,3 +191,5 @@ class ReasoningNode:
 reasoningNode = ReasoningNode() # Create ReasoningNode class instance
 reasoningNode.speakMenu() # Call speakMenu
 reasoningNode.processOrder() # Start order process
+
+#TEST

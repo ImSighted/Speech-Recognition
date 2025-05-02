@@ -18,7 +18,7 @@ This is the interface with GUI and voice control for ordering items off the menu
 
 2. **Install OpenAI-Whisper:**
 
-   ```bash
+   ```
 
     pip install git+https://github.com/openai/whisper.git
 
@@ -26,7 +26,7 @@ This is the interface with GUI and voice control for ordering items off the menu
 
 3. **Install Dependencies**:
 
-     ```bash
+     ```
 
     pip install -r requirements.txt
 

@@ -18,19 +18,19 @@ This is the interface with GUI and voice control for ordering items off the menu
 
 2. **Install OpenAI-Whisper:**
 
-   ```
+```
 
-    pip install git+https://github.com/openai/whisper.git
+pip install git+https://github.com/openai/whisper.git
 
-   ```
+```
 
 3. **Install Dependencies**:
 
-     ```
+```
 
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
-     ```
+```
 
   
 
@@ -60,11 +60,11 @@ project/
 
 1. **Start the python file:**
 
-   ```bash
+```
 
-   python Waiter_Chat.py
+python Waiter_Chat.py
 
-   ```
+```
 
   
 

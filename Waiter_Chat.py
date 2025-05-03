@@ -18,6 +18,7 @@ class RobotWaiter:
         self.root = root
         self.root.title("Robot Waiter")
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+        self.engine_lock = threading.Lock()  # added to fix error
         
         # Colour scheme
         self.colors = {
@@ -205,23 +206,22 @@ class RobotWaiter:
     
     """Speak text using TTS with input blocking"""
     def speak(self, text):
-        
+        """Speak text using TTS with input blocking"""
         if self.shutting_down:
             return
-            
+
         self.disable_input()
-        
+
         def _speak():
             try:
-
                 if hasattr(self, 'engine') and self.engine:
-                    self.engine.say(text)
-                    self.engine.runAndWait()
+                    with self.engine_lock:  # fixes multiple runAndWait error
+                        self.engine.say(text)
+                        self.engine.runAndWait()
             finally:
-
                 if not self.shutting_down:
                     self.root.after(0, self.enable_input)
-        
+
         threading.Thread(target=_speak, daemon=True).start()
     
     
